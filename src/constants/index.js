@@ -1,9 +1,9 @@
 
 export const lineItemTitles = {
   revenues: "Revenues ",
-  cogs: "Cost of Goods Sold",
+  cogs: "COGS",
   gp: "Gross Profit ",
-  opex: "Operating Expenses ",
+  opex: "OpEx",
   ebitda: "EBITDA ",
   depreciation: "Depreciation ",
   amortization: "Amortization ",
@@ -14,7 +14,7 @@ export const lineItemTitles = {
   capex: "CapEx ",
   fcf: "Unlevered Free Cash Flow ",
   discountPeriods: "Periods Discounted ",
-  pvFactors: "Present Value Factor ",
+  pvFactors: "PV Factor ",
   dcf: "Discounted Cash Flows ",
   partialPeriods: "Partial Period Factor",
 }

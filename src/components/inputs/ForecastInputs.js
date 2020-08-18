@@ -54,7 +54,7 @@ const ForecastInputs = ({ lineItem, forecasts, periods, updateForecasts }) => {
                 id={el} 
                 name={el} 
                 placeholder=" 1,000.00" 
-                className="border w-full rounded-lg text-center py-2 bg-gray-300 focus:outline-none focus:shadow-outline focus:bg-white "
+                className="border w-full rounded-lg text-sm text-center py-2 bg-gray-300 focus:outline-none focus:shadow-outline focus:bg-white "
                 />
             </div>
           )}
