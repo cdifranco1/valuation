@@ -1,22 +1,21 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
-import OktaSignInWidget from './OktaSignInWidget';
-import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
+import React, { useEffect } from "react";
+import { withAuthenticator } from '@aws-amplify/ui-react'
+import { Auth } from "aws-amplify";
+import { useHistory } from "react-router-dom";
 
+function Login(){
+  const history = useHistory()
 
-const Login = ({ baseUrl }) => {
-  const { authState } = useOktaAuth()
+  useEffect(() => {
+    Auth.currentAuthenticatedUser()
+    .then(() => history.push("/dashboard"))
+    .catch(err => console.log(err))
+  }, [history])
 
   return (
-    authState.isPending ?
-    <h1>...Loading</h1> :
-    authState.isAuthenticated ?
-    <Redirect to={{ pathname: '/dashboard' }}/> :
-    <OktaSignInWidget
-              baseUrl={baseUrl}
-            />
+    <div>
+    </div>
   )
 }
 
-export default Login
-
+export default withAuthenticator(Login)

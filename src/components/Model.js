@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { axiosInstance } from '../utils/axiosInstance'
-import { VericalSpacer, HorizontalSpacer } from '../utils/Spacer'
+import { VericalSpacer } from '../utils/Spacer'
 import Protected from "./Protected"
 import DCF from './dcf/DCF';
 import WACCBuild from './WACC/WACCBuild';

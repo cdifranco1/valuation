@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { axiosInstance } from '../utils/axiosInstance'
 import moment from 'moment'
@@ -13,7 +13,7 @@ import Protected from './Protected';
 const Dashboard = ({ resetState, idToken, authenticated }) => {
   const [ userModels, setUserModels ] = useState([])
   
-  const fetchModels = () =>    
+  const fetchModels = useCallback(() =>    
     axiosInstance(idToken)
     .get(`/api/dcf`) 
     .then(res => {
@@ -28,7 +28,7 @@ const Dashboard = ({ resetState, idToken, authenticated }) => {
           createdAt
         }
       }))
-    })
+    }), [ idToken ])
 
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const Dashboard = ({ resetState, idToken, authenticated }) => {
     if (authenticated) {
       fetchModels()
     }
-  },[idToken])
+  },[idToken, authenticated, fetchModels])
 
   const handleDelete = (id) => {
     //delete specific model then refetch
@@ -57,7 +57,7 @@ const Dashboard = ({ resetState, idToken, authenticated }) => {
               <h2 className="w-1/4 text-xl text-blue-800 font-semibold">Date Created</h2>
               <h2 className="w-1/4 text-xl text-blue-800 font-semibold">Last Updated</h2>
             </div>
-            <h2 className="w-1/5"></h2>
+            <span className="w-1/5"></span>
           </div>
         {userModels.map(el => {
           return (

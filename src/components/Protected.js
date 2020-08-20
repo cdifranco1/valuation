@@ -4,14 +4,15 @@ import { connect } from "react-redux"
 import { setCredentials } from '../actions/setCredentials'
 
 const Protected = (props) => {
+  const { setCredentials } = props
   const history = useHistory()
 
   useEffect(() => {
-    props.setCredentials()
+    setCredentials()
       .catch(err => {
         history.push("/")
       })
-  }, [])
+  }, [history, setCredentials])
 
   return (
     props.authenticated ?

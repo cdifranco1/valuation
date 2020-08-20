@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import numeral from 'numeral';
 
 export const LineItem = ({name, values, periods, total, decimal, flipSign}) => {
-  const [ editable, setEditable ] = useState(false)
   const formatNum = (num, flipSign, decimal) => {
     const signedNum = flipSign ? num * -1 : num
     if (decimal){

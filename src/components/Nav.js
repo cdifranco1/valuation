@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from "react-redux";
 import { NavLink, useHistory } from 'react-router-dom';
 import { Auth } from 'aws-amplify';

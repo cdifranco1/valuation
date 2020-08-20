@@ -1,4 +1,3 @@
-import { axiosInstance } from '../utils/axiosInstance'
 import { axiosIEX } from "../utils/axiosInstance"
 import * as Cache from '../utils/cache'
 

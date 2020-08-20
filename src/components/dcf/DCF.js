@@ -34,7 +34,7 @@ const DCF = (props) => {
     } else {
       history.push(`/model/${_id}/dcf`)
     }
-  }, [_id])
+  }, [_id, history])
 
   return (
     <div className="flex flex-col px-10 w-9/12">

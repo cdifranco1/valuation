@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import * as actions from '../../actions/updateInputs'
 import { lineItemTitles } from '../../constants'
-// import { actions } from '../../reducers/inputsReducer'
 
 
 const ForecastInputs = ({ lineItem, forecasts, periods, updateForecasts }) => {
@@ -41,9 +40,9 @@ const ForecastInputs = ({ lineItem, forecasts, periods, updateForecasts }) => {
 
   return (
     inputs ?
-    <div className="w-8/12 mb-4 p-3 bg-blue-400 rounded-lg shadow-xl">
-      <p className="font-semibold py-2 text-white">{lineItemTitles[lineItem]}</p>
-        <form onSubmit={handleSubmit} className="flex max-w-full mb-3 justify-between items-center p-3 rounded-lg">
+    <div className="w-8/12 mb-4 p-3 mx-2 bg-blue-400 rounded-lg shadow-xl">
+      <p className="font-semibold text-white">{lineItemTitles[lineItem]}</p>
+        <form onSubmit={handleSubmit} className="flex max-w-full mb-3 justify-between items-center p-2 rounded-lg">
           {Object.keys(inputs).map((el, index) =>
             <div key={el + index} className={`w-1/${Number(periods) + 1} p-2`}> 
               <label htmlFor={el} className="w-full text-center block font-semibold py-1 text-white">{el}</label>
@@ -54,7 +53,7 @@ const ForecastInputs = ({ lineItem, forecasts, periods, updateForecasts }) => {
                 id={el} 
                 name={el} 
                 placeholder=" 1,000.00" 
-                className="border w-full rounded-lg text-sm text-center py-2 bg-gray-300 focus:outline-none focus:shadow-outline focus:bg-white "
+                className="border w-full rounded-lg text-sm text-center py-2 bg-gray-300 focus:outline-none focus:shadow-outline focus:bg-white"
                 />
             </div>
           )}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { updateDisplay } from "../../actions/updateComps"
 import CompSelector from './CompSelector';

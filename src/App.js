@@ -4,7 +4,7 @@ import "./App.css"
 import Model from './components/Model';
 import Dashboard from './components/Dashboard';
 import Nav from './components/Nav';
-import Login from './components/Auth/LoginV2';
+import Login from './components/Auth/Login';
 
 
 const App = () => {

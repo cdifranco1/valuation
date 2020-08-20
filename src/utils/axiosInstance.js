@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { Auth } from "aws-amplify"
 
 const prodServer = 'https://valuation-backend.herokuapp.com/'
 const devServer = `http://localhost:5000`
